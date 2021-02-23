@@ -8,23 +8,20 @@ div.container  {
     display: grid;
 }
 
-header.row {
+header {
     background-color: rgb(46, 46, 46);
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: .2fr .5fr .5fr;
 }
 
-header img.logo {
+header img {
     height: 110px;
-    grid-row: 1/2;
 }
 
 header img:hover {
     transition: .5s;
     height: 115px;
 }
-header p.titulo {
+header p {
     color: whitesmoke;
     text-align: center;
     font-size: 12pt;
