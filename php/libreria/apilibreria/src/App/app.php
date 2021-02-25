@@ -12,6 +12,6 @@ $app = AppFactory::create();
 
 //Cargamos en memoria los archivos de rutas que contendrán los entrypoints a cada una de las tablas.
 //los entrypoints harán referencia a las acciones CRUD de una tabla de nuestra BD
-require __DIR__ . "/../Routes/libros.php";
+require __DIR__ . "/../Routes/Libros.php";
 
 $app->run();
