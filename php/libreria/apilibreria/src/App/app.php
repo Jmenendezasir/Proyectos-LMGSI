@@ -3,7 +3,7 @@
 use Slim\Factory\AppFactory;
 use Slim\Exception\NotFoundException;
 
-// cargamos el autoload para que pueda detectar el resto de las clases
+// cargamos el autoload para que pueda detectar el resto de las clasesdfsdf
 require __DIR__ . '/../../vendor/autoload.php';
 
 
