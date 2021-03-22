@@ -7,16 +7,33 @@
 
     class LibrosController {
         
-        public function new($request, $response, $args){
-            $response->getBody()->write("Insertar un nuevo Libro");
+        public function new(Request $request, Response $response, $args){
+            $parametros = $request->getParsedBody();
+          //  var_dump($parametros);
+            $response->getBody()->write("Insertar un nuevo Libro1");
+            return $response
+                ->withHeader('Content-Type', 'application/json')
+                ->withStatus(200);
+        }
+
+        public function getFilter(Request $request, Response $response, $args){
+            $parametros = $request->getQueryParams();
+            $precio = $parametros['precio']; 
+            $ed = $parametros['editorial'];   
+          // montamos el array de parametros de la GET
+            $valores = array($precio, $ed);
+            $libros = LibrosModel::getFilter($valores);
+            $librosJson = json_encode($libros); 
+            $response->getBody()->write($librosJson);
             return $response
                 ->withHeader('Content-Type', 'application/json')
                 ->withStatus(200);
         }
         public function getAll(Request $request, Response $response, $args){
-            echo "hola";
+           
             $libros = LibrosModel::getAll();
             $librosJson = json_encode($libros);
+           // $librosJson = "Listado de libros";
             $response->getBody()->write($librosJson);
             return $response
                 ->withHeader('Content-Type', 'application/json')
