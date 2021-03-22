@@ -1,7 +1,7 @@
 <?php
 namespace App\Config;
 use \PDO;
-use App\Config\Config;
+use App\Config\config;
 
 class DB {
     protected $pdo;
