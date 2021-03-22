@@ -24,7 +24,9 @@
         }
        
         public function getAll($request, $response, $args){
-            $response->getBody()->write("Listado de Usuarios");
+            $usuarios = UsuariosModel::getAll();
+            $usuariosJson = json_encode($usuarios);
+            $response->getBody()->write($usuariosJson);
             return $response
                 ->withHeader('Content-Type', 'application/json')
                 ->withStatus(200);
