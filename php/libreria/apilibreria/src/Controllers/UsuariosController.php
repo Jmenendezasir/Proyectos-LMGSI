@@ -35,7 +35,6 @@
             $parametros = $request->getQueryParams();
 
             $uid = $parametros['usuarioid'];
-            var_dump($uid);
             $valoresParametro = array($uid);
             $usuario = usuariosModel::delete($valoresParametro);
             $usuarioJson = json_encode($usuario);
