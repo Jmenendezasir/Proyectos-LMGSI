@@ -12,6 +12,12 @@ class UsuariosModel {
         UsuariosModel::$DB = new DB();
     }
 
+    public static function getAll(){
+      UsuariosModel::conexionDB();
+      $sql = "Select * from usuarios";
+      $data = UsuariosModel::$DB->run($sql, []);
+      return $data->fetchAll();
+    }
     public static function new($param){
        // print_r(array_keys($param));
        try{
