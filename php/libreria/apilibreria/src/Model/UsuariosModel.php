@@ -33,6 +33,6 @@ class UsuariosModel {
        UsuariosModel::conexionDB();
        $sql = "delete from usuarios where usuarioid = ?";
        $data = UsuariosModel::$DB->run($sql,$param);
-       return "El usuario". $param[0] . " ha sido eliminado ";
+       return "El usuario ". $param[0] . " ha sido eliminado ";
     }
 }
