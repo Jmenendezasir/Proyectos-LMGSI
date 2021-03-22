@@ -11,7 +11,7 @@ $app->group('/api', function(RouteCollectorProxy $group){
     //$group->post('/libros/new', 'App\Controllers\LibrosController:new');   
     #  $group->get('/libros/{id}', 'App\Controllers\LibrosController:show');
 });
-$app->get("/libros", function(Request $request, Response $response, $args) {
+/* $app->get("/libros", function(Request $request, Response $response, $args) {
     $response->getBody()->write("Hello, I'm your libros.php file");
     return $response;
-});
+}); */

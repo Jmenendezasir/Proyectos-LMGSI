@@ -34,7 +34,7 @@
             $libros = LibrosModel::getAll();
             $librosJson = json_encode($libros);
            // $librosJson = "Listado de libros";
-            $response->getBody()->write($librosJson);
+            $response->getBody()->write("Soy LibrosControLLer");
             return $response
                 ->withHeader('Content-Type', 'application/json')
                 ->withStatus(200);
