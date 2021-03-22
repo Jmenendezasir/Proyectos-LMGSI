@@ -6,5 +6,6 @@ use Slim\Routing\RouteCollectorProxy;
 
 $app->group('/api', function(RouteCollectorProxy $group){
     $group->get('/usuarios', 'App\Controllers\UsuariosController:getAll');
-    $group->post('/usuarios/new', 'App\Controllers\UsuariosController:new');   
+    $group->post('/usuarios/new', 'App\Controllers\UsuariosController:new');
+    $group->delete('/usuarios/delete', 'App\Controllers\UsuariosController:delete'); 
 });

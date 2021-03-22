@@ -31,4 +31,17 @@
                 ->withHeader('Content-Type', 'application/json')
                 ->withStatus(200);
             }
-    }
+        public function delete($request, $response, $args){
+            $parametros = $request->getQueryParams();
+
+            $uid = $parametros['usuarioid'];
+            var_dump($uid);
+            $valoresParametro = array($uid);
+            $usuario = usuariosModel::delete($valoresParametro);
+            $usuarioJson = json_encode($usuario);
+            $response->getBody()->write($usuarioJson);
+            return $response
+                 ->withHeader('Content-Type', 'application/json')
+                  ->withStatus(200);
+        }
+        }

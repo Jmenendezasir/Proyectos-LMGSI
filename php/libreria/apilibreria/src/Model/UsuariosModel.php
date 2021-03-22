@@ -19,10 +19,7 @@ class UsuariosModel {
       return $data->fetchAll();
     }
     public static function new($param){
-       // print_r(array_keys($param));
        try{
-         //   $values = array_values($param);
-         //   var_dump($param);
             UsuariosModel::conexionDB();
             $sql = "insert into usuarios (usuarioid, nombre, apellidos, direccion, ciudad, anioNac) 
                     values (?, ?, ?, ?, ?, ?)";
@@ -31,8 +28,11 @@ class UsuariosModel {
        } catch(Exception $e){
           return $e->getMessage();
        }
-        
-    //    return $data->fetch();
-
+    }
+    public function delete($param){
+       UsuariosModel::conexionDB();
+       $sql = "delete from usuarios where usuarioid = ?";
+       $data = UsuariosModel::$DB->run($sql,$param);
+       return "El usuario". $param[0] . " ha sido eliminado ";
     }
 }
