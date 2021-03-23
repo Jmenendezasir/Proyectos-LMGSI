@@ -10,7 +10,7 @@
             $parametros = $request->getQueryParams();
             $precio = $parametros['precio']; 
             $cat = $parametros['categoriaid'];   
-            $valores = array($precio, $ed);
+            $valores = array($precio, $cat);
             $libros = joseCLibrosModel::joseCgetFilter($valores);
             $librosJson = json_encode($libros); 
             $response->getBody()->write($librosJson);
