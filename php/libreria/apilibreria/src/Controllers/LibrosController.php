@@ -49,7 +49,7 @@
         }
         public function delete($request, $response, $args){
             $parametros = $request->getQueryParams();
-            $libroid = $parametros['libro_id'];
+            $libroid = (int)$parametros['libro_id'];
             $valoresParametro = array($libroid);
             $libros = LibrosModel::delete($valoresParametro);
             $librosJson = json_encode($libros);
