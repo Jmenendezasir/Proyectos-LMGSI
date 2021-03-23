@@ -17,7 +17,7 @@
         public function joseCgetFilter(Request $request, Response $response, $args){
             $parametros = $request->getQueryParams();
             $precio = $parametros['precio']; 
-            $cat = $parametros['categoriaid'];   
+            $cat = $parametros['nombre_categoria'];   
             $valores = array($precio, $cat);
             $libros = joseCLibrosModel::joseCgetFilter($valores);
             $librosJson = json_encode($libros); 
