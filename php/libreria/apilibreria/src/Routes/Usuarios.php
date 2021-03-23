@@ -1,5 +1,5 @@
 <?php
-# para agrupar las rutas en grupos
+
 use Slim\Routing\RouteCollectorProxy;
 
 //contendrá los entrypoints (acciones CRUD) de la tabla usuarios

@@ -5,5 +5,6 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
 
 $app->group('/api', function(RouteCollectorProxy $group){
+    $group->get('/joseCLibros', 'App\Controllers\joseCLibrosController:joseCgetAll'); 
     $group->get('/joseCLibros/filter', 'App\Controllers\joseCLibrosController:joseCgetFilter');
 });

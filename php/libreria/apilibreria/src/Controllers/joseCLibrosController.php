@@ -6,6 +6,14 @@
     use App\Model\joseCLibrosModel;
 
     class joseCLibrosController {
+        public function joseCgetAll(Request $request, Response $response, $args){
+            $libros = joseCLibrosModel::joseCgetAll();
+            $librosJson = json_encode($libros);
+            $response->getBody()->write($librosJson);
+            return $response
+                ->withHeader('Content-Type', 'application/json')
+                ->withStatus(200);
+        }
         public function joseCgetFilter(Request $request, Response $response, $args){
             $parametros = $request->getQueryParams();
             $precio = $parametros['precio']; 
