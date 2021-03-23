@@ -5,9 +5,9 @@ use Exception;
 
 
 class joseCUsuariosModel {
-    
+
     public static function conexionDB(){
-        UsuariosModel::$DB = new DB();
+        joseCUsuariosModel::$DB = new DB();
     }
     public static function joseCnew($param){
         try{
