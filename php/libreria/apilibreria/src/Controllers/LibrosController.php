@@ -39,7 +39,7 @@
             $entrega = (int)$parametros['entrega'];
             $imagen = $parametros['imagen'];
             $stock = (int)$parametros['stock'];
-            $valores = array($uid, $nombre, $apellidos, $direccion, $ciudad, $anionac);
+            $valores = array($libroid, $nombre, $descripcion, $categoriaid, $editorid, $precio, $entrega, $imagen, $stock);
             $result = LibrosModel::new($valores);
             $resultJson = json_encode($result);
             $response->getBody()->write($resultJson);
