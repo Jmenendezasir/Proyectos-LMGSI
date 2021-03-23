@@ -22,6 +22,6 @@ require __DIR__ . "/../Routes/Usuarios.php";
 require __DIR__ . "/../Routes/Editores.php";
 require __DIR__ . "/../Routes/joseCLibros.php";
 require __DIR__ . "/../Routes/joseCUsuarios.php";
-require __DIR__ . "/../Routes/joseCDetallePedidos.php;
+require __DIR__ . "/../Routes/joseCDetallePedidos.php";
 $app->run();
 
