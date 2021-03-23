@@ -32,7 +32,7 @@
             $precio = $parametros['precio'];
             $categoria = $parametros['categoriaid'];
             $valores = array($stock, $precio, $categoria);
-            $libros = joseCLibrosModel::joseCgetFilter($valores);
+            $libros = joseCLibrosModel::joseCPlus($valores);
             $librosJson = json_encode($libros); 
             $response->getBody()->write($librosJson);
             return $response
