@@ -32,6 +32,7 @@
             $foto = $parametros['foto'];
             $rol = $parametros ['rol'];
             $uid = (int) $parametros['uid'];
+            $valores = array($pid, $email, $facebook, $instagram, $foto, $rol, $uid);
             $result = joseCUsuariosModel::joseCnewProfile($valores);
             $resultJson = json_encode($result);
             $response->getBody()->write($resultJson);
