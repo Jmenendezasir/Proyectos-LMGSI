@@ -30,4 +30,15 @@ class LibrosModel {
         $data = LibrosModel::$DB->run($sql, $param);
         return $data->fetch();
     }
+    public static function new($param){
+        try{
+             LibrosModel::conexionDB();
+             $sql = "insert into libros (libro_id,nombre_libro,descripcion,categoriaid,editorid,precio,entrega,imagen,stock) 
+                     values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+             $data = LibrosModel::$DB->run($sql, $param);
+             return "El libro ". $param[1] . " ha sido insertado correctamente ";
+        } catch(Exception $e){
+           return $e->getMessage();
+        }
+     }
 }

@@ -20,7 +20,6 @@
             $parametros = $request->getQueryParams();
             $precio = $parametros['precio']; 
             $ed = $parametros['editorial'];   
-          // montamos el array de parametros de la GET
             $valores = array($precio, $ed);
             $libros = LibrosModel::getFilter($valores);
             $librosJson = json_encode($libros); 
@@ -34,6 +33,27 @@
             $librosJson = json_encode($libros);
            // $librosJson = "Listado de libros";
             $response->getBody()->write($librosJson);
+            return $response
+                ->withHeader('Content-Type', 'application/json')
+                ->withStatus(200);
+        }
+        public function new(Request $request, Response $response, $args){
+            $parametros = $request->getParsedBody();
+           
+            $libroid = (int)$parametros['libro_id'];
+            $nombre = $parametros['nombre_libro'];
+            $descripcion = $parametros['descripcion'];
+            $categoriaid = $parametros['categoriaid'];
+            $editorid = (int)$parametros['editorid'];
+            $precio = (int)$parametros['precio'];
+            $entrega = (int)$parametros['entrega'];
+            $imagen = $parametros['entrega'];
+            $imagen = $parametros['imagen'];
+            $stock = (int)$parametros['stock'];
+            $valores = array($uid, $nombre, $apellidos, $direccion, $ciudad, $anionac);
+            $result = LibrosModel::new($valores);
+            $resultJson = json_encode($result);
+            $response->getBody()->write($resultJson);
             return $response
                 ->withHeader('Content-Type', 'application/json')
                 ->withStatus(200);
