@@ -20,6 +20,7 @@ require __DIR__ . "/../Routes/Libros.php";
 require __DIR__ . "/../Routes/Categorias.php";
 require __DIR__ . "/../Routes/Usuarios.php";
 require __DIR__ . "/../Routes/Editores.php";
+require __DIR__ . "/../Routes/joseCLibros.php";
 
 $app->run();
 
