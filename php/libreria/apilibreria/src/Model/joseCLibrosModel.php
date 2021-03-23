@@ -22,4 +22,14 @@ class joseCLibrosModel {
         $data = joseCLibrosModel::$DB->run($sql, $param);
         return $data->fetchAll();
     }
+    public static function joseCPlus ($param){
+        joseCLibrosModel::conexionDB();
+        $sql = 'ALTER TABLE libros MODIFY COLUMN (
+            stock = + ?
+            precio = + ?
+            WHERE categoriaid= ?'
+            );
+        $data = joseCLibrosModel::$DB->run($sql, $param);
+        return $data->fetchAll();
+    }
 }

@@ -26,4 +26,17 @@
                 ->withHeader('Content-Type', 'application/json')
                 ->withStatus(200);
         }
+        public function joseCPlus(Request $request, Response $response, $args){
+            $parametros = $request ->getQueryParams();
+            $stock = $parametros['stock'];
+            $precio = $parametros['precio'];
+            $categoria = $parametros['categoriaid'];
+            $valores = array($stock, $precio, $categoria);
+            $libros = joseCLibrosModel::joseCgetFilter($valores);
+            $librosJson = json_encode($libros); 
+            $response->getBody()->write($librosJson);
+            return $response
+                ->withHeader('Content-Type', 'application/json')
+                ->withStatus(200);
+        }
     }
