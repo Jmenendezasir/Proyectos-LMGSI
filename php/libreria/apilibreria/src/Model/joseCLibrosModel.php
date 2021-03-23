@@ -27,8 +27,7 @@ class joseCLibrosModel {
         $sql = 'ALTER TABLE libros MODIFY COLUMN (
             stock = + ?
             precio = + ?
-            WHERE categoriaid= ?'
-            );
+            WHERE categoriaid= ?)';
         $data = joseCLibrosModel::$DB->run($sql, $param);
         return $data->fetchAll();
     }
