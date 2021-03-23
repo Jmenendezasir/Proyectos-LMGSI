@@ -38,4 +38,15 @@
                 ->withHeader('Content-Type', 'application/json')
                 ->withStatus(200);
         }
+        public function joseCgetCompras(Request $request, Response $response, $args){
+            $parametros = $request ->getQueryParams();
+            $usuarioid = $parametros['usuarioid'];
+            $valores = array($usuarioid);
+            $libros = joseCLibrosModel::joseCgetCompras($valores);
+            $librosJson = json_encode($libros); 
+            $response->getBody()->write($librosJson);
+            return $response
+                ->withHeader('Content-Type', 'application/json')
+                ->withStatus(200);
+        }
     }

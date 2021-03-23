@@ -5,6 +5,9 @@ use App\Config\DB;
 class joseCLibrosModel {
     private static $table = 'libros';
     private static $table2 = 'categorias';
+    private static $table3 = 'detallepedidos';
+    private static $table4 = 'usuarios';
+
     private static $DB;
 
     public static function conexionDB(){
@@ -27,6 +30,12 @@ class joseCLibrosModel {
         $sql = 'ALTER TABLE libros MODIFY COLUMN (
             stock = + ?
             precio = + ?)';
+        $data = joseCLibrosModel::$DB->run($sql, $param);
+        return $data->fetchAll();
+    }
+    public static function joseCgetCompras($param){
+        joseCLibrosModel::conexionDB();
+        $sql = 'select * from libros inner join detallepedidos on CodigoLibro=libro_id where codigousuario in (select usuarioid from usuarios where usuarioid= ? )';
         $data = joseCLibrosModel::$DB->run($sql, $param);
         return $data->fetchAll();
     }
