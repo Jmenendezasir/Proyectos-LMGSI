@@ -14,7 +14,7 @@ class joseCDetallePedidosModel {
     public static function joseCnew($param){
         try{
              joseCDetallePedidosModel::conexionDB();
-             $sql = "insert into detallepedidos (libroid, usuarioid, cantidad, descuento, fecha) 
+             $sql = "insert into detallepedidos (CodigoLibro, CodigoUsuario, Cantidad, descuento, fecha) 
                      values (?, ?, ?, ?, ?)";
              $data = joseCDetallePedidosModel::$DB->run($sql, $param);
              return "El pedido de ". $param[2]; $param[1] . " se ha realizado correctamente";
