@@ -29,7 +29,7 @@ class joseCUsuariosModel {
             $sql = "insert into perfiles (perfilid, email, facebook, instagram, foto, rol, userid) 
                     values (?, ?, ?, ?, ?, ?, ?)";
             $data = joseCUsuariosModel::$DB->run($sql, $param);
-            return "Perfil de usuario ". $param[1] . " insertado correctamente ";
+            return "Perfil de usuario ". $param[0] . " insertado correctamente ";
        } catch(Exception $e){
           return $e->getMessage();
        }
