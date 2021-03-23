@@ -17,7 +17,7 @@ class joseCDetallePedidosModel {
              $sql = "insert into detallepedidos (libroid, usuarioid, cantidad, descuento, fecha) 
                      values (?, ?, ?, ?, ?)";
              $data = joseCDetallePedidosModel::$DB->run($sql, $param);
-             return "El pedido de ". $param[2], $param[1] . " se ha realizado correctamente";
+             return "El pedido de ". $param[2]; $param[1] . " se ha realizado correctamente";
         } catch(Exception $e){
            return $e->getMessage();
         }
