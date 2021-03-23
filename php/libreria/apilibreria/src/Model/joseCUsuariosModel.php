@@ -5,6 +5,8 @@ use Exception;
 
 
 class joseCUsuariosModel {
+    private static $table = 'usuarios';
+    private static $DB; 
 
     public static function conexionDB(){
         joseCUsuariosModel::$DB = new DB();
