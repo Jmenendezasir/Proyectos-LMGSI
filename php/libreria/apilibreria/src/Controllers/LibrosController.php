@@ -47,7 +47,6 @@
             $editorid = (int)$parametros['editorid'];
             $precio = (int)$parametros['precio'];
             $entrega = (int)$parametros['entrega'];
-            $imagen = $parametros['entrega'];
             $imagen = $parametros['imagen'];
             $stock = (int)$parametros['stock'];
             $valores = array($uid, $nombre, $apellidos, $direccion, $ciudad, $anionac);
