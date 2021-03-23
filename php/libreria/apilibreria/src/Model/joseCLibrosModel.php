@@ -18,7 +18,7 @@ class joseCLibrosModel {
     }
     public static function joseCgetFilter($param){
         joseCLibrosModel::conexionDB();
-        $sql = 'SELECT * FROM CATEGORIAS C INNER JOIN LIBROS L ON C.CATEGORIAID=L.CATEGORIAID WHERE PRECIO> ? AND NOMBRE_CATEGORIA = ?';
+        $sql = 'SELECT * FROM categorias C INNER JOIN libros L ON C.CATEGORIAID=L.CATEGORIAID WHERE PRECIO> ? AND NOMBRE_CATEGORIA = ?';
         $data = joseCLibrosModel::$DB->run($sql, $param);
         return $data->fetchAll();
     }
