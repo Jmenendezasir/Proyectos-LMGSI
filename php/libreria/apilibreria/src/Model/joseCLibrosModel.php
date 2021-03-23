@@ -19,7 +19,7 @@ class joseCLibrosModel {
         joseCLibrosModel::conexionDB();
         $sql = 'Select * from libros where precio > ? and categoriaid = ?';
     //$sql = 'SELECT * FROM CATEGORIAS C INNER JOIN LIBROS L ON C.CATEGORIAID=L.CATEGORIAID WHERE PRECIO> ? AND NOMBRE_CATEGORIA = ?';
-        $data = LibrosModel::$DB->run($sql, $param);
+        $data = joseCLibrosModel::$DB->run($sql, $param);
         return $data->fetchAll();
     }
 }
