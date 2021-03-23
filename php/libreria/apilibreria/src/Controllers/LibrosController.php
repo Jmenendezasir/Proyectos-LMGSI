@@ -47,4 +47,15 @@
                 ->withHeader('Content-Type', 'application/json')
                 ->withStatus(200);
         }
+        public function delete($request, $response, $args){
+            $parametros = $request->getQueryParams();
+            $libroid = $parametros['libro_id'];
+            $valoresParametro = array($libroid);
+            $libros = LibrosModel::delete($valoresParametro);
+            $librosJson = json_encode($libros);
+            $response->getBody()->write($librosJson);
+            return $response
+                 ->withHeader('Content-Type', 'application/json')
+                  ->withStatus(200);
+        }
     }

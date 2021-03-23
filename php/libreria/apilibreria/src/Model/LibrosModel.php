@@ -41,4 +41,10 @@ class LibrosModel {
            return $e->getMessage();
         }
      }
+     public function delete($param){
+        LibrosModel::conexionDB();
+        $sql = "delete from libros where libro_id = ?";
+        $data = LibrosModel::$DB->run($sql,$param);
+        return "El libro ". $param[0] . " ha sido eliminado ";
+     }
 }
