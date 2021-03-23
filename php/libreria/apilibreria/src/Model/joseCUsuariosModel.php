@@ -26,7 +26,7 @@ class joseCUsuariosModel {
     public static function joseCnewProfile($param){
         try{
             joseCUsuariosModel::conexionDB();
-            $sql = "insert into perfiles inner join usuarios on usuarioid=userid (perfilid,email,facebook,instagram,foto,rol,userid) 
+            $sql = "insert into perfiles (perfilid, email, facebook, instagram, foto, rol, userid) 
                     values (?, ?, ?, ?, ?, ?, ?)";
             $data = joseCUsuariosModel::$DB->run($sql, $param);
             return "Perfil de usuario ". $param[1] . " insertado correctamente ";
