@@ -30,8 +30,7 @@
             $parametros = $request ->getQueryParams();
             $stock = $parametros['stock'];
             $precio = $parametros['precio'];
-            $categoria = $parametros['categoriaid'];
-            $valores = array($stock, $precio, $categoria);
+            $valores = array($stock, $precio);
             $libros = joseCLibrosModel::joseCPlus($valores);
             $librosJson = json_encode($libros); 
             $response->getBody()->write($librosJson);
