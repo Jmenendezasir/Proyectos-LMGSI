@@ -4,7 +4,7 @@
     use Psr\Http\Message\ServerRequestInterface as Request;
     use App\Model\joseCUsuariosModel;
     class joseCUsuariosController {
-
+        
         public function joseCnew(Request  $request, Response $response, $args){
             $parametros = $request->getParsedBody();
            

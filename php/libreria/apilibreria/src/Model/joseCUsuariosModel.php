@@ -5,6 +5,10 @@ use Exception;
 
 
 class joseCUsuariosModel {
+    
+    public static function conexionDB(){
+        UsuariosModel::$DB = new DB();
+    }
     public static function joseCnew($param){
         try{
              joseCUsuariosModel::conexionDB();
