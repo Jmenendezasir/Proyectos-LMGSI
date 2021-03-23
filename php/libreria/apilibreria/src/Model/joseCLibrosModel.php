@@ -4,6 +4,7 @@ use App\Config\DB;
 
 class joseCLibrosModel {
     private static $table = 'libros';
+    private static $table = 'categorias';
     private static $DB;
 
     public static function conexionDB(){
