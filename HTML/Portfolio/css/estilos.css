@@ -1,0 +1,96 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+@media screen and (min-width: 0px) {
+
+    div.container  {
+        display: grid;
+    }
+    header div.mainBar {
+        background-color:rgb(46, 46, 46) ;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+    header div.mainBar a{
+        width: 10%;
+        height: 60px;
+        color: whitesmoke;
+        font-size: 25pt;
+    }
+    header div.mainBar img{
+        width: 60%;
+    }
+    header div.cabecera{
+        width: 100%;
+        height: 600px;
+        background-image: url(../img/banner-movil.jpg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        color: whitesmoke;
+    }
+    header nav{
+        display: flex;
+        flex-flow: column nowrap;
+        background-color:rgb(46, 46, 46);
+        align-items: center;
+    }
+    header nav a i{
+        font-size: 35px;
+        margin: 10px;
+        color: darkmagenta;
+    }
+    header nav a span {
+        text-decoration: none;
+        color: whitesmoke;
+
+    }
+
+    footer {
+        background-color:rgb(46, 46, 46) ;
+        color: white;
+        text-align: center;    
+    }
+    footer nav a {
+        text-decoration: none;
+        color: white;
+    }
+    footer nav a:hover {
+        transition: .2s;
+        color: purple;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    header div.mainBar img{
+        width: 70%;
+    }
+    header div.cabecera{
+        background-image: url(../img/banner-tablet.jpg);
+        width: 100%;
+        height: 600px;
+    }
+    header nav{
+        flex-flow: row nowrap;
+        justify-content: space-around;
+    }
+}
+@media screen and (min-width: 900px) {
+    header div.mainBar {
+        justify-content: center;
+    }
+    header div.mainBar img{
+        width: 80%;
+    }
+    header div.cabecera{
+        background-image: url(../img/banner.jpg);
+
+    }
+    header div.mainBar a{
+        display: none;
+    }
+}
