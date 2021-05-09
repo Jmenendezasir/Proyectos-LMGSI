@@ -1,0 +1,17 @@
+
+*POR PRIMERA VEZ*
+
+git init {inicializamos el .git de nuestro proyecto}
+git remote add origin [enlace repositorio git] {añadimos el repositorio a nuestro proyecto}
+git remote -v {comprobamos que se ha conectado al repositorio}
+git chekout -b [nombre de la rama] {creamos una rama para nuestro proyecto}
+git add -A . {añadimos un nuevo stage}
+git commit -m ["mensaje"] {hacemos commit}
+git push origin [nombre rama] {subimos el proyecto}
+
+
+*CADA VEZ QUE QUERAMOS ACTUALIZAR*
+
+git add -A . {añadimos un nuevo stage}
+git commit -m ["mensaje"] {hacemos commit}
+git push origin [nombre rama] {subimos el proyecto}
